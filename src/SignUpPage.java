@@ -11,7 +11,7 @@ public class SignUpPage extends JPanel {
     private JTextField nameField;
     private JTextField passwordField;
 
-   public SignUpPage(QuizApp frame) {
+   public SignUpPage(QuizAppWindow frame) {
 
         setBorder(new EmptyBorder(5, 5, 5, 5));
         setLayout(null);
@@ -35,7 +35,7 @@ public class SignUpPage extends JPanel {
         lblPassword.setBounds(344, 154, 80, 19);
         add(lblPassword);
 
-        passwordField = new JTextField();
+        passwordField = new JPasswordField();
         passwordField.setBounds(421, 154, 109, 19);
         add(passwordField);
 

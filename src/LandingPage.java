@@ -13,7 +13,7 @@ public class LandingPage extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public LandingPage(QuizApp frame) {
+	public LandingPage(QuizAppWindow frame) {
 		setLayout(null);
         
 		Font newFont = new Font("Arial", Font.PLAIN, 24);
