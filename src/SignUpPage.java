@@ -10,8 +10,11 @@ public class SignUpPage extends JPanel {
     private static final long serialVersionUID = 1L;
     private JTextField nameField;
     private JTextField passwordField;
+    private JDBC jdbc;
+    private JPasswordField passwordField_1;
 
    public SignUpPage(QuizAppWindow frame) {
+	   jdbc=new JDBC();
 
         setBorder(new EmptyBorder(5, 5, 5, 5));
         setLayout(null);
@@ -43,7 +46,35 @@ public class SignUpPage extends JPanel {
         signupBtn.setBounds(380, 204, 109, 33);
         signupBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Signing In...");
+            	String username=nameField.getText().trim();
+            	String password=new String(((JPasswordField) passwordField).getPassword()).trim();
+            	if (!Validation.isValidUsername(username)) {
+                    JOptionPane.showMessageDialog(SignUpPage.this, 
+                        "Username must be 3-20 alphanumeric characters", 
+                        "Validation Error",JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                if (!Validation.isValidPassword(password)) {
+                    JOptionPane.showMessageDialog(SignUpPage.this, 
+                        "Password must be at least 4 characters", 
+                        "Validation Error",JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            	System.out.println("Signing Up...");
+            	
+            	boolean success=jdbc.registerUser(username,password);
+                if (success){
+                    JOptionPane.showMessageDialog(SignUpPage.this, 
+                        "Registration successful! Please login.", 
+                        "Success", JOptionPane.INFORMATION_MESSAGE);
+                    nameField.setText("");
+                    passwordField.setText("");
+                    frame.showPage("login");
+                } else {
+                    JOptionPane.showMessageDialog(SignUpPage.this, 
+                        "Username already exists.Please choose another.", 
+                        "Registration Failed", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
         add(signupBtn);
@@ -58,9 +89,12 @@ public class SignUpPage extends JPanel {
         registerBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	System.out.println("Login button clicked. Navigating to Login Page.");
-                frame.showPage("login");
+                nameField.setText("");
+                passwordField.setText("");
+            	frame.showPage("login");
             }
         });
         add(registerBtn);
+        
     }
 }
