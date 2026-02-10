@@ -61,7 +61,7 @@ public class UpdateQuestionsPage extends JPanel {
 		questionLabel.setBounds(119, 142, 165, 42);
 		add(questionLabel);
 		
-		JTextArea questionArea = new JTextArea();
+		questionArea = new JTextArea();
 		questionArea.setBounds(294, 142, 688, 42);
 		add(questionArea);
 		
@@ -115,7 +115,7 @@ public class UpdateQuestionsPage extends JPanel {
 		add(lblNewLabel);
 		
 		String[] difficulty={"Beginner","Intermediate","Advanced"};
-		JComboBox <String>difficultyBox = new JComboBox<>(difficulty);
+		difficultyBox = new JComboBox<>(difficulty);
 		difficultyBox.setBounds(629, 335, 90, 20);
 		add(difficultyBox);
 		
@@ -123,7 +123,7 @@ public class UpdateQuestionsPage extends JPanel {
 		lblDifficulty.setBounds(570, 330, 49, 31);
 		add(lblDifficulty);
 		
-		JButton updateBtn = new JButton("Update Question");
+		updateBtn = new JButton("Update Question");
 		updateBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			updateQuestion();

@@ -29,7 +29,7 @@ public class ScorePage extends JPanel {
 		
 		messageLabel=new JLabel("");
         messageLabel.setFont(scoreFont);
-        messageLabel.setBounds(300, 210, 400, 50);
+        messageLabel.setBounds(10, 210, 1012, 50);
         add(messageLabel);
         
 		JButton backBtn = new JButton("Back to HomePage");

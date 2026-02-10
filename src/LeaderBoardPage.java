@@ -50,6 +50,15 @@ public class LeaderBoardPage extends JPanel {
 		backBtn.setBounds(10, 10, 139, 42);
 		add(backBtn);
 		
+        JButton refreshBtn = new JButton("Refresh");
+		refreshBtn.setBounds(850, 10, 100, 42);
+		refreshBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				loadLeaderboards();
+			}
+		});
+		add(refreshBtn);
+		
 		JLabel lblNewLabel_1 = new JLabel("Top Beginners");
 		lblNewLabel_1.setBounds(10, 118, 211, 51);
 		add(lblNewLabel_1);
@@ -98,6 +107,7 @@ public class LeaderBoardPage extends JPanel {
         add(advancedScroll);
         
         loadLeaderboards();
+	
     }
     
     public void loadLeaderboards() {
@@ -137,6 +147,5 @@ public class LeaderBoardPage extends JPanel {
                 entry.getTestsTaken()
             });
         }
-
 	}
 }

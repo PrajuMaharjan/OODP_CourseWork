@@ -41,7 +41,7 @@ public class AddQuestionsPage extends JPanel {
 		questionLabel.setBounds(31, 72, 311, 42);
 		add(questionLabel);
 		
-		JTextArea questionArea = new JTextArea();
+		questionArea = new JTextArea();
 		questionArea.setBounds(31, 132, 949, 42);
 		add(questionArea);
 		

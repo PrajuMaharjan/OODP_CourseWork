@@ -4,7 +4,7 @@ public class Validation {
         if (username==null || username.trim().isEmpty()) {
             return false;
         }
-        return username.matches("^[a-zA-Z0-9_]{3,20}$");
+        return username.matches("^[a-zA-Z0-9_ ]{3,20}$");
     }
 
     public static boolean isValidPassword(String password) {

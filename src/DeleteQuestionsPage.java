@@ -49,11 +49,11 @@ public class DeleteQuestionsPage extends JPanel {
         
         questionTextLabel = new JLabel("");
         questionTextLabel.setFont(new Font("Arial", Font.PLAIN, 14));
-        questionTextLabel.setBounds(69, 214, 913, 68);
+        questionTextLabel.setBounds(69, 214, 913, 189);
         add(questionTextLabel);
         
         deleteBtn = new JButton("Delete Question");
-        deleteBtn.setBounds(458, 321, 145, 56);
+        deleteBtn.setBounds(452, 475, 145, 56);
         deleteBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 deleteQuestion();
